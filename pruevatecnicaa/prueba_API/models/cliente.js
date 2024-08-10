@@ -50,7 +50,7 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: true,
       field: "clienteid",
-      autoIncrement: false
+      autoIncrement: true
     }
   };
   const options = {
