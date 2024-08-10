@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "postgres.jpilfypvmwllgutkqoqi",
+    "password": "PruebaPARQUE",
+    "database": "postgres",
+    "host": "aws-0-us-west-1.pooler.supabase.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "postgres.jpilfypvmwllgutkqoqi",
+    "password": "PruebaPARQUE",
+    "database": "postgres",
+    "host": "aws-0-us-west-1.pooler.supabase.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "postgres.jpilfypvmwllgutkqoqi",
+    "password": "PruebaPARQUE",
+    "database": "postgres",
+    "host": "aws-0-us-west-1.pooler.supabase.com",
+    "dialect": "postgres"
+  }
+}
