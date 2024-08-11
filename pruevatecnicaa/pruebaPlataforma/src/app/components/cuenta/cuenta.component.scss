@@ -1,0 +1,92 @@
+// Importa Bootstrap si no lo tienes importado ya
+@import '~bootstrap/scss/bootstrap';
+
+.container {
+  // Añade margen superior
+  margin-top: 2rem;
+
+  // Estilos para pantallas pequeñas (teléfonos)
+  @include media-breakpoint-down(sm) {
+    .card {
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+    }
+  }
+
+  // Estilos para pantallas medianas (tabletas)
+  @include media-breakpoint-up(md) {
+    .card {
+      margin-bottom: 2rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+    }
+
+    .card-text {
+      font-size: 1.125rem;
+    }
+  }
+
+  // Estilos para pantallas grandes (computadoras)
+  @include media-breakpoint-up(lg) {
+    .card {
+      margin-bottom: 2.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      transition: box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .card-title {
+      font-size: 1.75rem;
+    }
+
+    .card-text {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// Estilos generales
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    color: #6c757d;
+  }
+}
+
+// Alineación del texto en pantallas pequeñas
+.text-center {
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    text-align: left;
+  }
+}
+
+// Estilos para alertas
+.alert {
+  font-size: 1rem;
+  margin-top: 2rem;
+}

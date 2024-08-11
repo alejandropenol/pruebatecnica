@@ -1,0 +1,26 @@
+<div class="container mt-4">
+    <div class="row">
+        <!-- Verifica si `cuentas` tiene datos -->
+        <div *ngIf="cuentas && cuentas.length > 0; else noData">
+            <div class="col-md-4" *ngFor="let cuenta of cuentas">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Cuenta ID: {{ cuenta.cuentaid }}</h5>
+                        <p class="card-text"><strong>Tipo de Cuenta:</strong> {{ cuenta.tipocuenta }}</p>
+                        <p class="card-text"><strong>Estado:</strong> {{ cuenta.estado }}</p>
+                        <p class="card-text"><strong>Valor Disponible:</strong> ${{ cuenta.valordisponible |
+                            number:'1.2-2' }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Muestra un mensaje si no hay cuentas disponibles -->
+        <ng-template #noData>
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    No hay cuentas disponibles.
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
