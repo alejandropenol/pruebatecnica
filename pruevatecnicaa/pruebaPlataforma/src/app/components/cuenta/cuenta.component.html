@@ -1,24 +1,70 @@
 <div class="container mt-4">
+    <!-- Mostrar las cuentas -->
     <div class="row">
-        <!-- Verifica si `cuentas` tiene datos -->
-        <div *ngIf="cuentas && cuentas.length > 0; else noData">
-            <div class="col-md-4" *ngFor="let cuenta of cuentas">
-                <div class="card mb-4 shadow-sm">
+        <div *ngIf="cuentas && cuentas.length > 0; else noDataCuentas">
+            <div class="col-md-4 mb-4" *ngFor="let cuenta of cuentas">
+                <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title">Cuenta ID: {{ cuenta.cuentaid }}</h5>
                         <p class="card-text"><strong>Tipo de Cuenta:</strong> {{ cuenta.tipocuenta }}</p>
                         <p class="card-text"><strong>Estado:</strong> {{ cuenta.estado }}</p>
-                        <p class="card-text"><strong>Valor Disponible:</strong> ${{ cuenta.valordisponible |
-                            number:'1.2-2' }}</p>
+                        <p class="card-text"><strong>Valor Disponible:</strong> ${{ cuenta.valordisponible | number:'1.2-2' }}</p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Muestra un mensaje si no hay cuentas disponibles -->
-        <ng-template #noData>
+        <ng-template #noDataCuentas>
             <div class="col-12">
                 <div class="alert alert-warning text-center" role="alert">
                     No hay cuentas disponibles.
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+    <!-- Mostrar los clientes -->
+    <div class="row mt-4">
+        <div *ngIf="clientes && clientes.length > 0; else noDataClientes">
+            <div class="col-md-4 mb-4" *ngFor="let cliente of clientes">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Cliente ID: {{ cliente.clienteid }}</h5>
+                        <p class="card-text"><strong>Cédula:</strong> {{ cliente.cedula }}</p>
+                        <p class="card-text"><strong>Nombres:</strong> {{ cliente.nombres }}</p>
+                        <p class="card-text"><strong>Apellidos:</strong> {{ cliente.apellidos }}</p>
+                        <p class="card-text"><strong>Cuenta ID:</strong> {{ cliente.cuentaid }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noDataClientes>
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    No hay clientes disponibles.
+                </div>
+            </div>
+        </ng-template>
+    </div>
+
+    <!-- Mostrar los movimientos -->
+    <div class="row mt-4">
+        <div *ngIf="movimientos && movimientos.length > 0; else noDataMovimientos">
+            <div class="col-md-4 mb-4" *ngFor="let movimiento of movimientos">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Movimiento ID: {{ movimiento.id }}</h5>
+                        <p class="card-text"><strong>Cuenta ID:</strong> {{ movimiento.cuentaid }}</p>
+                        <p class="card-text"><strong>Fecha de Transacción:</strong> {{ movimiento.fechatransaccion | date }}</p>
+                        <p class="card-text"><strong>Valor de Transacción:</strong> ${{ movimiento.montotransaccion | number:'1.2-2' }}</p>
+                        <p class="card-text"><strong>Descripción:</strong> {{ movimiento.descripcion }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noDataMovimientos>
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    No hay movimientos disponibles.
                 </div>
             </div>
         </ng-template>

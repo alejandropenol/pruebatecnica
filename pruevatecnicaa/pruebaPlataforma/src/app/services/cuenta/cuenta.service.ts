@@ -7,6 +7,10 @@ import { environment } from '../../../environments/environment';
   providedIn: 'root'
 })
 export class CuentaService {
+  btenerMovimiento: any;
+  obtenerClientes() {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(protected http: HttpClient) { }
   obtenercuenta(): Observable<any> {
