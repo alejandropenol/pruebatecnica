@@ -2,34 +2,28 @@
     <div class="col-sm-3">
     </div>
     <div class="col-sm-6">
-    <br>
-    <div class="alert alert-warning d-flex align-items-center" role="alert"
-   [hidden]="!is_error" >
-    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img"
-   aria-label="Warning:">
-    <use xlink:href="#exclamation-triangle-fill" />
-    </svg>
-    <span class="sr-only">Error:</span>
-    Usuario o contraseña no validos
-    </div>
-    <br>
-    <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1"></span>
-    <input [(ngModel)]="user.usr" type="text" class="form-control"
-   placeholder="Nombre de usuario:"
-    aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <br>
-    <div class="input-group">
-    <input [(ngModel)]="user.pass" type="password" class="form-control"
-   placeholder="Contraseña:"
-    aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <br>
-    <button type="button" class="btn btn-primary"
-   (click)="validarUsuario()">Ingresar</button>
+        <br>
+        <div class="alert alert-warning d-flex align-items-center" role="alert" *ngIf= "is_error">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:">
+                <use xlink:href="#exclamation-triangle-fill" />
+            </svg>
+            <span class="sr-only">Error:</span>
+            Usuario o contraseña no validos
+        </div>
+        <br>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1"></span>
+            <input [(ngModel)]="user.usr" type="text" class="form-control" placeholder="Nombre de usuario:"
+                aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <br>
+        <div class="input-group">
+            <input [(ngModel)]="user.pass" type="password" class="form-control" placeholder="Contraseña:"
+                aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" (click)="validarUsuario()">Ingresar</button>
     </div>
     <div class="col-sm-3">
     </div>
-   </div>
-   
+</div>

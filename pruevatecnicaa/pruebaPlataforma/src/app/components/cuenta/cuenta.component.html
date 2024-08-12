@@ -1,9 +1,16 @@
+<!-- Título de la sección -->
+<div class="row">
+    <div class="col-12 mb-4">
+        <h2 class="text-center">Detalles de la Cuenta</h2>
+    </div>
+</div>
+
 <div class="container mt-4">
     <!-- Mostrar las cuentas -->
     <div class="row">
         <div *ngIf="cuentas && cuentas.length > 0; else noDataCuentas">
-            <div class="col-md-4 mb-4" *ngFor="let cuenta of cuentas">
-                <div class="card shadow-sm">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let cuenta of cuentas">
+                <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h5 class="card-title">Cuenta ID: {{ cuenta.cuentaid }}</h5>
                         <p class="card-text"><strong>Tipo de Cuenta:</strong> {{ cuenta.tipocuenta }}</p>
@@ -25,8 +32,8 @@
     <!-- Mostrar los clientes -->
     <div class="row mt-4">
         <div *ngIf="clientes && clientes.length > 0; else noDataClientes">
-            <div class="col-md-4 mb-4" *ngFor="let cliente of clientes">
-                <div class="card shadow-sm">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let cliente of clientes">
+                <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h5 class="card-title">Cliente ID: {{ cliente.clienteid }}</h5>
                         <p class="card-text"><strong>Cédula:</strong> {{ cliente.cedula }}</p>
@@ -49,8 +56,8 @@
     <!-- Mostrar los movimientos -->
     <div class="row mt-4">
         <div *ngIf="movimientos && movimientos.length > 0; else noDataMovimientos">
-            <div class="col-md-4 mb-4" *ngFor="let movimiento of movimientos">
-                <div class="card shadow-sm">
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let movimiento of movimientos">
+                <div class="card shadow-sm h-100">
                     <div class="card-body">
                         <h5 class="card-title">Movimiento ID: {{ movimiento.id }}</h5>
                         <p class="card-text"><strong>Cuenta ID:</strong> {{ movimiento.cuentaid }}</p>
@@ -70,3 +77,4 @@
         </ng-template>
     </div>
 </div>
+

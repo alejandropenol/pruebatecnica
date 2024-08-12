@@ -1,12 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-
+import { MovimientoService } from '../../services/movimiento/movimiento.service';
 
 @Component({
   selector: 'app-movimiento',
   templateUrl: './movimiento.component.html',
-  styleUrl: './movimiento.component.scss'
+  styleUrls: ['./movimiento.component.scss']
 })
-export class MovimientoComponent {
+export class MovimientoComponent implements OnInit {
+  movimientos: any; // Almacena los datos de los movimientos
 
+  constructor(private movimientoService: MovimientoService) { }
+
+  ngOnInit(): void {
+    // Obtener movimientos
+    this.movimientoService.obtenermovimiento().subscribe({
+      next: (data) => {
+        this.movimientos = data;
+        console.log('Movimientos:', data);
+      },
+      error: (err) => console.error(err)
+    });
+  }
 }

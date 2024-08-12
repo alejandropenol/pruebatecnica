@@ -1,1 +1,32 @@
-<p>movimiento works!</p>
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="text-center">Detalles de los movimientos</h2>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <!-- Mostrar los movimientos -->
+    <div class="row">
+        <div *ngIf="movimientos && movimientos.length > 0; else noDataMovimientos">
+            <div class="col-md-4 mb-4" *ngFor="let movimiento of movimientos">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Movimiento ID: {{ movimiento.id }}</h5>
+                        <p class="card-text"><strong>Cuenta ID:</strong> {{ movimiento.cuentaid }}</p>
+                        <p class="card-text"><strong>Fecha de Transacción:</strong> {{ movimiento.fechatransaccion | date }}</p>
+                        <p class="card-text"><strong>Valor de Transacción:</strong> ${{ movimiento.montotransaccion | number:'1.2-2' }}</p>
+                        <p class="card-text"><strong>Descripción:</strong> {{ movimiento.descripcion }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noDataMovimientos>
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    No hay movimientos disponibles.
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
+

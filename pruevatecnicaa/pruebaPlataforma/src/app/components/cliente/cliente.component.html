@@ -1,1 +1,31 @@
-<p>cliente works!</p>
+<div class="row mb-4">
+    <div class="col-12">
+        <h2 class="text-center">Detalles del cliente</h2>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <!-- Mostrar los clientes -->
+    <div class="row">
+        <div *ngIf="clientes && clientes.length > 0; else noDataClientes">
+            <div class="col-md-4 mb-4" *ngFor="let cliente of clientes">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Cliente ID: {{ cliente.clienteid }}</h5>
+                        <p class="card-text"><strong>Cédula:</strong> {{ cliente.cedula }}</p>
+                        <p class="card-text"><strong>Nombres:</strong> {{ cliente.nombres }}</p>
+                        <p class="card-text"><strong>Apellidos:</strong> {{ cliente.apellidos }}</p>
+                        <p class="card-text"><strong>Cuenta ID:</strong> {{ cliente.cuentaid }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noDataClientes>
+            <div class="col-12">
+                <div class="alert alert-warning text-center" role="alert">
+                    No hay clientes disponibles.
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

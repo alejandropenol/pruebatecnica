@@ -10,7 +10,7 @@ module.exports = sequelize => {
       comment: null,
       primaryKey: true,
       field: "id",
-      autoIncrement:true
+      autoIncrement: true
     },
     cuentaid: {
       type: DataTypes.DOUBLE,
